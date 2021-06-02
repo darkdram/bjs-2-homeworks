@@ -28,13 +28,7 @@ function getArrayParams(arr) {
       min = arr[0]; 
       max = arr[0];
       sum = 0;
-
-      for(let i = 1; i < arr.length; i++) {
-        // code here
-      }
     }
-
-
 
   */
 
