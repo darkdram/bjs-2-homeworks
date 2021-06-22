@@ -18,8 +18,19 @@ function cachingDecoratorNew(func) {
 }
 
 
-function debounceDecoratorNew(func) {
-  // Ваш код
+function debounceDecoratorNew(func, timer) {
+  let canRun = true;
+  let timerHandler = null;
+
+  return (...args) => {
+    clearTimeout(timerHandler);
+    if (canRun) {
+      func(...args);
+      canRun = false;
+    }
+
+    timerHandler = setTimeout(() => canRun = true, timer);
+  }
 }
 
 function debounceDecorator2(func) {
